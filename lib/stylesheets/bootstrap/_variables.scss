@@ -15,6 +15,11 @@ $grayLight:         lighten($black, 75%) !default;
 $grayLighter:       lighten($black, 90%) !default;
 $white:             #fff !default;
 
+$errorColor: 	#c43c35 !default;
+$successColor: 	#57a957 !default;
+$infoColor:     #339bb9 !default;
+$warnColor:		#eedc94 !default;
+
 // Accent Colors
 $blue:              #049CDB !default;
 $blueDark:          #0064CD !default;
@@ -37,19 +42,8 @@ $gridGutterWidth:   20px !default;
 $extraSpace:        ($gridGutterWidth * 2) !default; // For our grid calculations
 $siteWidth:         ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1)) !default;
 
-// Color Scheme
-// Use this to roll your own color schemes if you like (unused by Bootstrap by default)
-$baseColor:         $blue !default;                  // Set a base color
-$complement:        spin($baseColor, 180) !default;  // Determine a complementary color
-$split1:            spin($baseColor, 158) !default;  // Split complements
-$split2:            spin($baseColor, -158) !default;
-$triad1:            spin($baseColor, 135) !default;  // Triads colors
-$triad2:            spin($baseColor, -135) !default;
-$tetra1:            spin($baseColor, 90) !default;   // Tetra colors
-$tetra2:            spin($baseColor, -90) !default;
-$analog1:           spin($baseColor, 22) !default;   // Analogs colors
-$analog2:           spin($baseColor, -22) !default;
 
+$labelWidth: 130px !default;
 
 
 // More variables coming soon:

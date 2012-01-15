@@ -27,17 +27,17 @@
 	// Danger and error appear as red
 	&.danger,
 	&.error {
-		@include gradientBar(#ee5f5b, #c43c35);
+		@include gradientBar(lighten($errorColor, 7%), $errorColor);
 	}
 	
 	// Success appears as green
 	&.success {
-		@include gradientBar(#62c462, #57a957);
+		@include gradientBar(lighten($successColor, 7%), $successColor);
 	}
 
 	// Info appears as a neutral blue
 	&.info {
-		@include gradientBar(#5bc0de, #339bb9);
+		@include gradientBar(lighten($infoColor, 7%), $infoColor);
 	}
 }
 
@@ -67,12 +67,6 @@
 	// Focus state for keyboard and accessibility
 	&:focus {
 		outline: 1px dotted #666;
-	}
-
-	// Primary Button Type
-	&.primary {
-		color: $white;
-		@include gradientBar($blue, $blueDark)
 	}
 
 	// Transitions
@@ -118,7 +112,6 @@
 }
 
 // Super jank hack for removing border-radius from IE9 so we can keep filter gradients on alerts and buttons
-:root .alert-message,
 :root .btn, :root .button {
 	border-radius: 0 \0;
 }

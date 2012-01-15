@@ -22,7 +22,7 @@
 		height: 0;
 	}
 	.inner {
-		background: @black;
+		background: $black;
 		background: rgba(0,0,0,.8);
 		padding: 3px;
 		overflow: hidden;
@@ -39,7 +39,7 @@
 	}
 
 	.content {
-		background-color: @white;
+		background-color: $white;
 		padding: 14px;
 		@include border-radius(0 0 3px 3px);
 		@include background-clip(padding-box);

@@ -23,12 +23,12 @@
 // ------------
 
 // Base alert styles
-.alert-message {
+.alert-message, .flash-message{
 	position: relative;
 	padding: 7px 15px;
 	margin-bottom: $baseline;
 	color: $grayDark;
-	@include gradientBar(#fceec1, #eedc94); // warning by default
+	@include gradientBar(lighten($warnColor, 7%), $warnColor); // warning by default
 	text-shadow: 0 1px 0 rgba(255,255,255,.5);
 	border-width: 1px;
 	border-style: solid;
@@ -103,17 +103,17 @@
 			text-shadow: 0 1px 0 rgba(255,255,255,.5);
 		}
 		&.error {
-			background-color: lighten(#f56a66, 25%);
-			border-color: lighten(#f56a66, 20%);
+			background-color: lighten($errorColor, 7%);
+			border-color: $errorColor;
 		}
 		&.success {
-			background-color: lighten(#62c462, 30%);
-			border-color: lighten(#62c462, 25%);
+			background-color: lighten($successColor, 7%);
+			border-color: $successColor;
 		}
 		
 		&.info {
-			background-color: lighten(#6bd0ee, 25%);
-			border-color: lighten(#6bd0ee, 20%);
+			background-color: lighten($infoColor, 7%);
+			border-color: $infoColor;
 		}
 
 		// Change link color back
@@ -125,4 +125,9 @@
 		}
 
 	}
+}
+
+:root .alert-message,
+:root .btn, :root .button {
+	border-radius: 0 \0;
 }

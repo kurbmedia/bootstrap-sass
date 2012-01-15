@@ -44,10 +44,11 @@ textarea{
 // Float labels left
 label {
 	padding-top: 6px;
+	padding-right:5px;
 	font-size: $basefont;
 	line-height: $baseline;
 	float: left;
-	width: 130px;
+	width: $labelWidth;
 	text-align: right;
 }
 

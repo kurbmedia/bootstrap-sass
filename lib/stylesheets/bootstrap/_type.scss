@@ -9,6 +9,11 @@
 // BODY TEXT
 // ---------
 
+body {
+	margin: 0;
+	@include sans-serif(normal,$basefont,$baseline);
+}
+
 p {
 	@include font-shorthand(normal,$basefont,$baseline);
 	margin-bottom: $baseline / 2;
