@@ -12,9 +12,9 @@ end
 
 if defined?(Rails)
   require 'bootstrap/sass/rails'
-end
-
-if defined?(Compass)
+elsif defined?(Compass)
   Compass::Frameworks.register('bootstrap', :stylesheets_directory => Bootstrap::Sass.stylesheets_dir, :templates_directory => '')
 end
+
+
 
