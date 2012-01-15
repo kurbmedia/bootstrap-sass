@@ -1,0 +1,18 @@
+@import '../mixins';
+
+// PATTERN ANIMATIONS
+// ------------------
+
+$pattern-anim-included: false !default;
+
+@if $pattern-anim-included == false{
+	.fade {
+		@include transition(opacity .15s linear);
+		opacity: 0;
+		&.in {
+			opacity: 1;
+		}
+	}
+}
+
+$pattern-anim-included: true;

@@ -1,0 +1,23 @@
+@import '../variables';
+@import '../mixins';
+
+input,
+textarea {
+  // Default columns
+  &.span1     { @include formColumns(1); }
+  &.span2     { @include formColumns(2); }
+  &.span3     { @include formColumns(3); }
+  &.span4     { @include formColumns(4); }
+  &.span5     { @include formColumns(5); }
+  &.span6     { @include formColumns(6); }
+  &.span7     { @include formColumns(7); }
+  &.span8     { @include formColumns(8); }
+  &.span9     { @include formColumns(9); }
+  &.span10    { @include formColumns(10); }
+  &.span11    { @include formColumns(11); }
+  &.span12    { @include formColumns(12); }
+  &.span13    { @include formColumns(13); }
+  &.span14    { @include formColumns(14); }
+  &.span15    { @include formColumns(15); }
+  &.span16    { @include formColumns(16); }
+}

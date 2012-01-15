@@ -22,10 +22,6 @@ task :update do
       FileUtils.touch(tomake)
     end
   end
-  
-  FileUtils.cp(
-    File.join(source_dir, 'docs', 'assets', 'img', 'glyphicons-halflings-sprite.png'), 
-    File.join(File.dirname(__FILE__), 'vendor', 'assets', 'images', 'bootstrap', 'glyphicons-halflings-sprite.png'), 
-  )
+
   
 end
