@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins';
+@import 'bootstrap/globals';
+
 
 // Patterns.scss
 // Repeatable UI elements outside the base styles provided from the scaffolding
@@ -34,3 +34,20 @@ footer {
 	margin-top: $baseLineHeight - 1;
 	border-top: 1px solid #eee;
 }
+
+
+@import 'bootstrap/patterns/alerts';
+@import 'bootstrap/patterns/breadcrumbs';
+@import 'bootstrap/patterns/button-groups';
+@import 'bootstrap/patterns/buttons';
+@import 'bootstrap/patterns/close';
+@import 'bootstrap/patterns/dropdowns';
+@import 'bootstrap/patterns/labels';
+@import 'bootstrap/patterns/modals';
+@import 'bootstrap/patterns/navbar';
+@import 'bootstrap/patterns/navs';
+@import 'bootstrap/patterns/pagination';
+@import 'bootstrap/patterns/popovers';
+@import 'bootstrap/patterns/progress-bars';
+@import 'bootstrap/patterns/thumbnails';
+@import 'bootstrap/patterns/tooltip';

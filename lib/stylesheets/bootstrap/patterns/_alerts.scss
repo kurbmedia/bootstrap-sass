@@ -1,8 +1,24 @@
-@import 'variables';
-@import 'mixins';
+@import 'bootstrap/globals';
 
 // ALERT STYLES
 // ------------
+
+.alert-message{
+	@each $pair in $buttonColors{
+		
+		&.#{nth($pair, 1)}, &.#{nth($pair, 1)}:hover{
+			text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+			color: $white
+		}
+		
+		&.#{nth($pair, 1)}{
+			@if length($pair > 2){ @include gradientBar(nth($pair, 2), nth($pair, 3)); }
+			@else{ @include gradientBar(nth($pair, 2), darken(nth($pair, 2), 10%)); }
+		}
+		
+	}
+}
+
 
 // Base alert styles
 .alert-message {

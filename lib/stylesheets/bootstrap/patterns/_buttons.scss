@@ -1,11 +1,11 @@
-@import 'variables';
-@import 'mixins';
+@import 'bootstrap/globals';
 
 // BUTTON STYLES
 // -------------
 
 // Shared colors for buttons and alerts
-.btn, .button, .alert-message {
+.btn,
+.alert-message {
 	// Set text color
 	&.danger,
 	&.danger:hover,
@@ -18,43 +18,43 @@
 		text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 		color: $white
 	}
-
 	// Danger and error appear as red
-	&.danger,
 	&.error {
-		@include gradientBar(#ee5f5b, #c43c35);
+		@include gradientBar(nth($buttonErrorColors, 1), nth($buttonErrorColors, 2));
+	}
+	
+	&.danger{
+		@include gradientBar(nth($buttonDangerColors, 1), nth($buttonDangerColors, 2));
 	}
 	
 	// Success appears as green
 	&.success {
-		@include gradientBar(#62c462, #57a957);
+		@include gradientBar(nth($buttonSuccessColors, 1), nth($buttonSuccessColors, 2));
 	}
 	
 	// Info appears as a neutral blue
 	&.info {
-		@include gradientBar(#5bc0de, #339bb9);
+		@include gradientBar(nth($buttonInfoColors, 1), nth($buttonInfoColors, 2));
 	}
 }
 
-@mixin button{
+// Base .btn styles
+
+.btn, .button{
+	// Button Base
 	display: inline-block;
 	padding: 5px 10px 6px;
 	font-size: $baseFontSize;
 	line-height: normal;
 	color: #333;
 	text-shadow: 0 1px 1px rgba(255,255,255,.75);
-}
 
-// Base .btn styles
-.btn, .button{
-	// Button Base
-	@include button;
+	@include gradient-vertical-three-colors(#ffffff, #ffffff, 25%, darken(#ffffff, 10%)); // Don't use @include gradientbar(); here since it does a three-color gradient
 
-  	@include gradient-vertical-three-colors(#ffffff, #ffffff, 25%, darken(#ffffff, 10%)); // Don't use gradientbar here since it does a three-color gradient
 	border: 1px solid #ccc;
 	border-bottom-color: #bbb;
 	@include border-radius(4px);
-	$shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+	$shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
 	@include box-shadow($shadow);
 	cursor: pointer;
 
@@ -69,12 +69,6 @@
 		outline: 1px dotted #666;
 	}
 
-	// Primary Button Type
-	&.primary {
-		color: $white;
-		text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-		@include gradientBar($blue, $blueDark)
-	}
 
 	// Transitions
 	@include transition(.1s linear all);
@@ -82,24 +76,29 @@
 	// Active and Disabled states
 	&.active,
 	&:active {
-		$shadow:inset 0 2px 4px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.05);
+		$shadow: inset 0 2px 4px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.05);
 		@include box-shadow($shadow);
 	}
-
+	
+	&.primary {
+		color: $white;
+		text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+		@include gradientBar(nth($buttonPrimaryColors, 1), nth($buttonPrimaryColors, 2));
+	}
+	
 	&.disabled {
 		cursor: default;
 		background-image: none;
-		@include reset-filter;
+		@include reset-filter();
 		@include opacity(65);
 		@include box-shadow(none);
 	}
-
 	&[disabled] {
 		// disabled pseudo can't be included with .disabled
 		// def because IE8 and below will drop it ;_;
 		cursor: default;
 		background-image: none;
-		@include reset-filter;
+		@include reset-filter();
 		@include opacity(65);
 		@include box-shadow(none);
 	}
@@ -111,7 +110,6 @@
 		line-height: normal;
 		@include border-radius(5px);
 	}
-	
 	&.small {
 		padding: 7px 9px 7px;
 		font-size: $baseFontSize - 2px;
@@ -125,8 +123,8 @@
 }
 
 // Help Firefox not be a jerk about adding extra padding to buttons
-
-button.btn, input[type=submit].btn, button.button, input[type=submit].button{
+button.btn,
+input[type=submit].btn {
 	&::-moz-focus-inner {
 		padding: 0;
 		border: 0;

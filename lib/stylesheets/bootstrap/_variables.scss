@@ -1,4 +1,4 @@
-// Variables.less
+// Variables.scss
 // Variables to customize the look and feel of Bootstrap
 // -----------------------------------------------------
 
@@ -11,7 +11,7 @@ $linkColorHover:    darken($linkColor, 15) !default;
 
 
 // GRAYS
-// -----
+// -----------------------------------------------------
 
 $black:             #000 !default;
 $grayDark:          #333 !default;
@@ -22,7 +22,7 @@ $white:             #fff !default;
 
 
 // ACCENT COLORS
-// -------------
+// -----------------------------------------------------
 
 $blue:              #049CDB !default;
 $blueDark:          #0064CD !default;
@@ -33,9 +33,44 @@ $orange:            #f89406 !default;
 $pink:              #c3325f !default;
 $purple:            #7a43b6 !default;
 
+// ----------------------------------------------------------------------------------------------------------
+// EXTENDED VARIABLES
+// Extended variable naming, uses defaults above but provides more meaningful names for specific items
+// ----------------------------------------------------------------------------------------------------------
+
+
+// Labels
+// ----------------------------------------------------------------------------------------------------------
+
+
+$labelDefaultColor: 	$grayLight !default;
+$labelSuccessColor: 	$green !default;
+$labelWarningColor: 	$orange !default;
+$labelImportantColor: 	#c43c35 !default;
+$labelNoticeColor:		lighten($blue, 25%) !default;
+
+// Buttons
+// ----------------------------------------------------------------------------------------------------------
+
+$buttonDefaultColors: 	$grayLight !default;
+$buttonPrimaryColors: 	$blue $blueDark !default;
+$buttonInfoColors:		#5bc0de #339bb9 !default;
+$buttonSuccessColors:	#62c462 #57a957 !default;
+$buttonDangerColors: 	#ee5f5b #c43c35 !default;
+$buttonErrorColors:     #ee5f5b #c43c35 !default;
+
+// Forsm
+// ----------------------------------------------------------------------------------------------------------
+
+$formErrorColors: 	#b94a48 #ee5f5b !default; 
+$formWarningColors: #c09853 #ccae64 !default; 
+$formSuccessColors: #468847 #57a957 !default;
+
+// ----------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------
 
 // GRID
-// ----
+// -----------------------------------------------------
 
 // Modify the grid styles in mixins.scss
 $gridColumns:       12 !default;
@@ -48,7 +83,7 @@ $fluidSidebarWidth: 220px !default;
 
 
 // Z-INDEX
-// -------
+// -----------------------------------------------------
 
 $zindexDropdown:        1000 !default;
 $zindexPopover:         1010 !default;
@@ -59,7 +94,7 @@ $zindexModal:           1050 !default;
 
 
 // THEME VARIABLES
-// ---------------
+// -----------------------------------------------------
 
 // Typography
 $baseFontSize:          13px !default;

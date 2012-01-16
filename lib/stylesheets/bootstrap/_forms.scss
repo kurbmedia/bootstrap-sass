@@ -1,7 +1,4 @@
-@import 'variables';
-@import 'mixins';
-@import 'variables';
-@import 'mixins';
+@import 'bootstrap/globals';
 
 // Forms.scss
 // Base styles for various input types, form layouts, and states
@@ -295,18 +292,19 @@ textarea[readonly] {
 }
 
 // Error
+
 .control-group.error {
-	@include formFieldState(#b94a48, #ee5f5b, lighten(#ee5f5b, 30%));
+	@include formFieldState(nth($formErrorColors, 1), nth($formErrorColors, 2), lighten(nth($formErrorColors, 2), 30%));
 }
 
 // Warning
 .control-group.warning {
-	@include formFieldState(#c09853, #ccae64, lighten(#CCAE64, 5%));
+	@include formFieldState(nth($formWarningColors, 1), nth($formWarningColors, 2), lighten(nth($formWarningColors, 2), 5%));
 }
 
 // Success
 .control-group.success {
-	@include formFieldState(#468847, #57a957, lighten(#57a957, 30%));
+	@include formFieldState(nth($formSuccessColors, 1), nth($formSuccessColors, 2), lighten(nth($formSuccessColors, 2), 30%));
 }
 
 // HTML5 invalid states
@@ -314,11 +312,11 @@ textarea[readonly] {
 input:invalid,
 textarea:invalid,
 select:invalid {
-	color: #b94a48;
-	border-color: #ee5f5b;
+	color: nth($formErrorColors, 1);
+	border-color: nth($formErrorColors, 2);
 	&:focus {
-		border-color: darken(#ee5f5b, 10%);
-		@include box-shadow(0 0 6px lighten(#ee5f5b, 20%));    
+		border-color: darken(nth($formErrorColors, 2), 10%);
+		@include box-shadow(0 0 6px lighten(nth($formErrorColors, 2), 20%));    
 	}
 }
 
